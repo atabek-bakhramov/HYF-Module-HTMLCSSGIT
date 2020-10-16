@@ -75,6 +75,10 @@ footer {
     right: 5rem;
 }
 
+.main-pic-container img {
+    box-shadow: 10px 5px 5px rgb(38, 38, 222);
+}
+
 header h1 {
     font-size: 2.5rem;
     position: relative;
