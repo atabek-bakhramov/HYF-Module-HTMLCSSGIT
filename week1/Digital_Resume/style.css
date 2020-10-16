@@ -266,7 +266,7 @@ footer p {
     }
 
     .main-pic-container img {
-        box-shadow: none;
+        box-shadow: initial;
     }
 }
 
