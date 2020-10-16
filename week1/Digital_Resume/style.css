@@ -264,6 +264,10 @@ footer p {
         margin: 0.8rem;
         font-size: 1.5rem;
     }
+
+    .main-pic-container img {
+        box-shadow: none;
+    }
 }
 
 /* Finished! Hooray! :) */
