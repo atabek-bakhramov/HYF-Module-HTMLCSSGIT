@@ -52,8 +52,21 @@ Ta-dam!
 
 P.S. Now I know. Using CLI is fun!
 
+The Git commands were learnt and used so far:
 
+	cd;
+	ls;
+	touch filename;
+	mkdir foldername;
+	echo;
+	git init;
+	git clone;
+	git status;
+	git add -A (or .);
+	git commit -m "description message";
+	git push;
 
+	
 
 
 
