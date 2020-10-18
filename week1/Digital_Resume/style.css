@@ -5,12 +5,15 @@
     padding: 0;
     box-sizing: border-box;
     line-height: 1.4; /* https://developer.mozilla.org/en-US/docs/Web/CSS/line-height shows 1.15 unit as "normal". Traversy Media in his videos uses 1.6. I prefer 1.4. */
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 :root {
     --border: rgb(51, 63, 99);
     --bg-color: linear-gradient(to right, rgb(255, 255, 0), rgb(130, 200, 238), rgb(38, 38, 222));
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
 }
 
 img {
@@ -115,14 +118,9 @@ ul.article-list {
     font-size: 1.5rem;
 }
 
-li.value-details {
+span.value-details {
     font-weight: bold;
     font-family: 'Lucida Sans', Arial, sans-serif;
-}
-
-.key-details {
-    font-weight: initial;
-    font-family: 'Times New Roman', Times, serif;
 }
 
 li.resposibilities {
