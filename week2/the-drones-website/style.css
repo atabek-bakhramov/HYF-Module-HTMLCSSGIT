@@ -1,0 +1,287 @@
+/* Mobile first approach */
+
+/* General set of rules */
+
+@font-face {
+    font-family: 'Exo 2';
+    src: url('./font-family/exo-2/Exo2-Regular.ttf');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Exo 2';
+    src: url('./font-family/exo-2/Exo2-Italic.ttf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Exo 2';
+    src: url('./font-family/exo-2/Exo2-Bold.ttf');
+    font-weight: bold;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Exo 2', serif;
+    line-height: 1.6;
+}
+
+:root {
+    --bright: rgb(242, 97, 53);
+    --main: rgb(0, 0, 0);
+    --support: rgb(9, 161, 255);
+    --light: rgb(255, 255, 255);
+    
+}
+
+html {
+    font-size: 62.5%; /* Targeting the root element and changing browsers' default font-size for making easy calculations: 1rem = 10px */
+}
+
+main {
+    max-width: 95%; /* It looks nicer this way on models with curved sides of displays like Samsung Galaxy 8, 9 or Macbook to see where the scroll bar is*/
+    margin: 0 auto; /* To center */
+    background-image: url(./assets/background-picture.jpg);
+    background-repeat: repeat; 
+}
+
+header {
+    width: 95%;
+    margin: 0 auto;
+    min-height: 10rem;
+    background-color: var(--main);
+    border-bottom: 0.5rem solid var(--bright);
+}
+
+img {
+    max-width: 100%;
+    background-color: var(--light); /* Some pictures' background transparent, some ones white. I equaled all by making it white */
+    /* border: 1rem solid var(--headers); */
+    border-radius: 1rem 1rem 0 0;
+    margin: 1rem 0;
+    filter: saturate(8);
+    opacity: 0.8;
+
+}
+
+.grid-item {
+    padding: 1rem;
+    /* background-color: rgb(101, 101, 101); */
+    border-radius: 5rem 2rem;
+    background-color: var(--main);
+}
+
+ul {
+    list-style-position: inside;
+    list-style-type: none;
+    padding: 2rem;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+h1 {
+    padding: 5rem 0;
+    font-size: 6rem;
+    color: var(--headers);
+    -webkit-text-stroke: 0.2rem var(--bright); 
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 4rem;
+    color: var(--bright);
+    -webkit-text-stroke: 1px var(--main);
+}
+
+h3 {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    color: var(--light);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    -webkit-text-stroke: 1px var(--support);   
+}
+
+p {
+    font-size: 1.6rem;
+    padding: 2rem;
+    color: var(--light);
+    height: 15rem;
+    border-radius: 0 0 1rem 1rem;
+    text-align: justify;
+}
+
+#grid-floats {
+    /* border: 5px solid blue; */
+    /* overflow: hidden; */
+}
+
+#grid-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-item {
+    border: 0.5rem solid var(--headers);
+    margin-bottom: 2rem;
+    height: 60rem;
+    box-shadow: 2px 2px 10px var(--bright);
+}
+
+.grid-item:hover {
+
+    box-shadow: 2px 2px 10px 10px var(--light);
+}
+
+
+
+/* Tablets view starts */
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+
+    /* For styling purposes only */
+
+    img {
+        display: block; /* to convert from inline into block, so I can center pictures in the grid item by margin: 0 auto; */
+        width: 30rem;
+        height: 20rem;
+        margin: 2rem auto;
+    }
+
+    .grid-item {
+        height: 55rem;
+    }
+
+    h3 {
+        height: 6.7rem;
+    }
+
+    p {
+        height: 20rem;
+        overflow: scroll;
+    }
+
+    /* Float section starts */
+
+    #grid-floats li:nth-child(n):nth-child(-n+2) {
+        width: 44%;
+        float: left;
+        margin: 3%;
+    }
+
+    #grid-floats li:nth-child(n+3):nth-child(-n+14) {
+        float: left;
+        margin: 1%;
+    }
+    
+    #grid-floats li:nth-child(3n+3) {
+        clear: both;
+        width: calc(100%/3 - 2%); /* So nice to have the calc key to do all the hard work :) */
+    }
+
+    #grid-floats li:nth-child(3n+4), #grid-floats li:nth-child(3n+5) {
+        width: calc(100%/3 - 2%); /* Minus 2 needed to give some amount for margin */
+    }
+
+    /* Float section ends */
+
+    /* Flex-box section starts */
+
+    main section:nth-child(2) {
+        clear: both; /* It prevents the h2 ("Grid with flexbox") from going/jumping above - into the "Grid with floats" section in the layout */
+    }
+
+    #grid-flex {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #grid-flex li:nth-child(n):nth-child(-n+2) {
+        flex-basis: calc(96% / 2);
+    }
+
+    #grid-flex li:nth-child(n+3):nth-child(-n+14) {
+        flex-basis: calc(96% / 3);
+    }
+
+    /* Flex-box section ends */
+
+}
+
+/* Tablets view ends */
+
+/* Desktops view begins */
+
+@media only screen and (min-width: 1025px) {
+    
+    /* Float section starts */ 
+
+    #grid-floats li {
+        height: 60rem;
+        float: left;
+        margin: 1%;
+    }
+
+    #grid-floats li:first-child, #grid-floats li:last-child {
+        width: calc(96% / 2);
+    }
+
+    #grid-floats li:nth-child(n+2):nth-child(-n+13) {
+        width: calc(92% / 4); 
+    }
+
+    /* Float section starts */ 
+
+    /* Flex-box section starts */
+
+    main section:nth-child(2) {
+        clear: both; /* It prevents the h2 ("Grid with flexbox") from going/jumping above - into the "Grid with floats" section in the layout */
+    }
+
+    /* Here comes one question regarding this set of rules of $grid-flex. 
+    If I don't right it here, my flexbox doesn't work. Shouldn't be #grid-flex was inheriting
+    everything from above, I mean from above media query for tablets? */ 
+    #grid-flex {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #grid-flex li:first-child, #grid-flex li:last-child {
+        flex-basis: calc(96% / 2);
+    }
+
+    #grid-flex li:nth-child(n+2):nth-child(-n+13) {
+        flex-basis: calc(92% / 4);
+    }
+
+    /* Flex-box section ends */
+
+    /* Rules for styling purposes only */
+
+    h3 {
+        font-size: 2rem;
+        height: 10rem;
+    }
+
+    ul li:first-child img, ul li:last-child img  {
+        display: block;
+        width: 70%; /* To be able to contain the picture and text inside of the <li> container, when the display becomes really big, like 1600px wide */
+        margin: 0 auto;
+        border: 1px solid yellow; 
+    } 
+
+    li:not(:first-child):not(:last-child) p {
+        height: 27rem;
+        overflow: scroll;
+        /* border: 1px white solid; */
+    }
+
+}
