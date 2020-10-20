@@ -92,6 +92,7 @@ h1 {
 }
 
 h2 {
+    padding: 5rem 0;
     font-size: 4rem;
     color: var(--bright);
     -webkit-text-stroke: 1px var(--main);
