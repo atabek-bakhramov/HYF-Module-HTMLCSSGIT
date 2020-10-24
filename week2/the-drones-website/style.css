@@ -33,7 +33,6 @@
     --main: rgb(0, 0, 0);
     --support: rgb(9, 161, 255);
     --light: rgb(255, 255, 255);
-    
 }
 
 html {
@@ -43,7 +42,7 @@ html {
 main {
     max-width: 95%; /* It looks nicer this way on models with curved sides of displays like Samsung Galaxy 8, 9 or Macbook to see where the scroll bar is*/
     margin: 0 auto; /* To center */
-    background-image: url(./assets/background-picture.jpg);
+    background-image: url('./assets/background-picture.jpg');
     background-repeat: repeat; 
 }
 
@@ -63,6 +62,7 @@ ul {
 
 h1, h2, h3 {
     text-align: center;
+    text-transform: uppercase;
 }
 
 h1 {
@@ -70,23 +70,21 @@ h1 {
     font-size: 6rem;
     color: var(--headers);
     -webkit-text-stroke: 0.2rem var(--bright); 
-    text-transform: uppercase;
 }
 
 h2 {
-    padding: 5rem 0;
+    padding: 3rem 0;
     font-size: 4rem;
     color: var(--bright);
-    -webkit-text-stroke: 1px var(--main);
+    -webkit-text-stroke: 0.1rem var(--main);
 }
 
 h3 {
     font-size: 1.6rem;
     padding: 0.5rem;
     color: var(--light);
-    text-transform: uppercase;
     letter-spacing: 0.2rem;
-    -webkit-text-stroke: 1px var(--support);   
+    -webkit-text-stroke: 0.1rem var(--support);   
 }
 
 p {
@@ -98,6 +96,10 @@ p {
     text-align: justify;
 }
 
+#grid-floats li {
+    float: left;
+}
+
 #grid-flex {
     display: flex;
     flex-direction: column;
@@ -107,7 +109,7 @@ p {
 
 img {
     max-width: 100%;
-    background-color: var(--light); /* Some pictures' background transparent, some ones white. I equaled all by making it white */
+    background-color: var(--light); /* Some pictures' background are transparent, some ones white. I equaled all by making it white */
     filter: saturate(8); /* The colors of the pictures looked faint. I added some bright colors to make it look more fun */
     border-radius: 1rem 1rem 0 0;
     margin: 1rem 0;
@@ -117,13 +119,13 @@ img {
     padding: 1rem;
     border-radius: 5rem 2rem;
     background-color: var(--main);
-    margin-bottom: 2rem;
+    margin: 0 0 2rem 0;
     height: 60rem;
-    box-shadow: 0px 0px 10px var(--bright);
+    box-shadow: 0 0 1rem var(--bright);
 }
 
 .grid-item:hover {
-    box-shadow: 0px 0px 10px 10px var(--light);
+    box-shadow: 0 0 1rem 1rem var(--light);
 }
 
 .grid-item:hover img {
@@ -150,18 +152,16 @@ img {
 
 /* Tablets view starts */
 
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
 
     /* Float section starts */
 
     #grid-floats li:nth-child(n):nth-child(-n+2) {
         width: 44%;
-        float: left;
         margin: 3%;
     }
 
     #grid-floats li:nth-child(n+3):nth-child(-n+14) {
-        float: left;
         margin: 1%;
     }
     
@@ -171,7 +171,7 @@ img {
     }
 
     #grid-floats li:nth-child(3n+4), #grid-floats li:nth-child(3n+5) {
-        width: calc(100%/3 - 2%); /* Minus 2 needed to give some amount for margin */
+        width: calc(100%/3 - 2%); /* Minus 2 needed to give some amount for margin. Give me some hint if there is a better way, I love finding out better ways! */
     }
 
     /* Float section ends */
@@ -183,7 +183,6 @@ img {
     }
 
     #grid-flex {
-        display: flex;
         justify-content: space-around;
         flex-direction: row;
         flex-wrap: wrap;
@@ -218,7 +217,7 @@ img {
 
     p {
         height: 20rem;
-        overflow: scroll;
+        overflow: auto;
     }
 
     /* Common rules for both section end */
@@ -228,13 +227,12 @@ img {
 
 /* Desktops view begins */
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1024px) {
     
     /* Float section starts */ 
 
     #grid-floats li {
         height: 60rem;
-        float: left;
         margin: 1%;
     }
 
@@ -254,11 +252,11 @@ img {
         clear: both; /* It prevents the h2 ("Grid with flexbox") from going/jumping above - into the "Grid with floats" section in the layout */
     }
 
-    /* Here comes one question regarding this set of rules of $grid-flex. 
-    If I don't right it here, my flexbox doesn't work. Shouldn't be #grid-flex was inheriting
-    everything from above, I mean from above media query for tablets? */ 
+    /* Here comes one question regarding this set of rules of #grid-flex. 
+    If I don't write it here, my flexbox doesn't work. Shouldn't be #grid-flex was inheriting all properties from above, 
+    I mean from above media query for tablets? I already set all exact same rules for #grid-flex selector in tablet media, 
+    why do I have to duplicate it here? */ 
     #grid-flex {
-        display: flex;
         justify-content: space-around;
         flex-direction: row;
         flex-wrap: wrap;
@@ -274,23 +272,22 @@ img {
 
     /* Flex-box section ends */
 
-    /* Common rules for both section start */
+    /* Common rules for both sections start */
 
     h3 {
         font-size: 2rem;
         height: 10rem;
     }
 
-    ul li:first-child img, ul li:last-child img  {
+    li:first-child img, li:last-child img  {
         display: block;
-        width: 70%; /* To be able to contain the picture and text inside of the <li> container, when the display becomes really big, like 1600px wide */
+        width: 70%; /* To be able to contain the picture and text inside of the <li> container, when the size of the viewer's screen is really big, like 1600px wide */
         margin: 0 auto;
-        border: 1px solid yellow; 
     } 
 
     li:not(:first-child):not(:last-child) p {
         height: 27rem;
-        overflow: scroll;
+        overflow: auto;
     }
 
     /* Common rules for both section end */
