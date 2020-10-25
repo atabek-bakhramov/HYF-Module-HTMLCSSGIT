@@ -165,13 +165,13 @@ footer {
 
 /* Selectors for the Footer start */
 
-footer {
+.footer {
     margin: 2rem 0 0 0;
     background-image: var(--bg-color);
 
 }
 
-footer p {
+.footer__description {
     font-size: 1rem;
     padding: 1.5rem;
     text-align: center;
