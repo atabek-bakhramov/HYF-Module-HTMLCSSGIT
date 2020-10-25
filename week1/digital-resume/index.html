@@ -12,64 +12,62 @@
 
         <!--Header starts: includes a title and a picture-->
         <header class="header">
-            <div class="main-pic-container">
-                <img class="header__photo" src="./assets/profile_picture.png">
-            </div>
             <h1 class="header__title">Digital Resume of<br>Atabek Bakhramov</h1>
+            <img class="header__photo" src="./assets/profile_picture.png">
         </header>
         <!--Header ends-->
 
         <!--Personal Info article starts-->
-        <article class="personal-info">
-            <h2 class="section-headers">Personal Information</h2>
-            <ul class="article-list">
-                <li><span class="value-details">Address:</span> Veldhoven, North Brabant, Netherlands</li>
-                <li><span class="value-details">Telephone number:</span> +31 6 85424073</li>
-                <li><span class="value-details">Email:</span> coderonline@icloud.com</li>
+        <article class="article personal-info">
+            <h2 class="article__header">Personal Information</h2>
+            <ul class="article__information-list">
+                <li><span class="information-information-list__list-item">Address:</span> Veldhoven, North Brabant, Netherlands</li>
+                <li><span class="information-list__list-item">Telephone number:</span> +31 6 85424073</li>
+                <li><span class="information-list__list-item">Email:</span> coderonline@icloud.com</li>
                 <br>
-                <li><span class="value-details">Nationality:</span> Kazakhstan</li>
-                <li><span class="value-details">Date of birth:</span> 07.05.1991</li>
-                <li><span class="value-details">Gender:</span> Male</li>
-                <li><span class="value-details">Marital status:</span> Single</li>
+                <li><span class="information-list__list-item">Nationality:</span> Kazakhstan</li>
+                <li><span class="information-list__list-item">Date of birth:</span> 07.05.1991</li>
+                <li><span class="information-list__list-item">Gender:</span> Male</li>
+                <li><span class="information-list__list-item">Marital status:</span> Single</li>
             </ul>
         </article>
         <!--Personal Info article ends-->
 
         <!--Work Experience article starts-->
-        <article class="work-experience">
-            <h2 class="section-headers">Work Experience</h2>
+        <article class="article work-experience">
+            <h2 class="article__header">Work Experience</h2>
             <!--The first part of Work Experience starts-->
-            <ul class="article-list">
-                <li><span class="value-details">Dates:</span> April 2016 - September 2017</li>
-                <li><span class="value-details">Position:</span> Income Auditor</li>
+            <ul class="article__information-list">
+                <li><span class="information-list__list-item">Dates:</span> April 2016 - September 2017</li>
+                <li><span class="information-list__list-item">Position:</span> Income Auditor</li>
                 <!--A list item of "Responsibilities" includes sub-unordered list of items-->
-                <li><span class="value-details">Resposibilities:</span>
+                <li><span class="information-list__list-item">Resposibilities:</span>
                     <ul>
-                        <li class="resposibilities">Checking revenue;</li>
-                        <li class="resposibilities">Controling the flow of money revieved via POS-terminals and by cash;</li>
-                        <li class="resposibilities">Preparing Revenue Report for General Manager an Financial Director;</li>
+                        <li class="list-item__sub-list-item">Checking revenue;</li>
+                        <li class="list-item__sub-list-item">Controling the flow of money revieved via POS-terminals and by cash;</li>
+                        <li class="list-item__sub-list-item">Preparing Revenue Report for General Manager an Financial Director;</li>
                     </ul>
                 </li>
                 <!--Sub-unordered list ends-->
-                <li><span class="value-details">Employer/address:</span> Rixos Khadisha Shymkent, <span class="keep-together">17 Zheltoksan</span> street, Shymkent, Kazakhstan</li>
-                <li><span class="value-details">Type of business:</span> Hotel</li>
+                <li><span class="information-list__list-item">Employer/address:</span> Rixos Khadisha Shymkent, <span class="list-item--binded-words">17 Zheltoksan</span> street, Shymkent, Kazakhstan</li>
+                <li><span class="information-list__list-item">Type of business:</span> Hotel</li>
             </ul>
             <!--The first part of Work Experience ends-->
             <br>
             <!--The second part of Work Experience starts-->
-            <ul class="article-list">
-                <li><span class="value-details">Dates:</span> January 2012 - April 2016</li>
-                <li><span class="value-details">Position:</span> Accountant</li>
+            <ul class="article__information-list">
+                <li><span class="information-list__list-item">Dates:</span> January 2012 - April 2016</li>
+                <li><span class="information-list__list-item">Position:</span> Accountant</li>
                 <!--A list item of "Responsibilities" includes sub-unordered list of items-->
-                <li class="value-details">Resposibilities: 
+                <li class="information-list__list-item">Resposibilities: 
                     <ul>
-                        <li class="resposibilities">Tax calculations;</li>
-                        <li class="resposibilities">Wages accounting</li>
+                        <li class="list-item__sub-list-item">Tax calculations;</li>
+                        <li class="list-item__sub-list-item">Wages accounting</li>
                     </ul>
                 </span></li>
                 <!--Sub-unordered list ends-->
-                <li><span class="value-details">Employer/address:</span> Enterpreneur Usmanova D.K., <span class="keep-together">49 Ismailova</span> street, Saryagash, Kazakhstan</li>
-                <li><span class="value-details">Type of business:</span> Retail</li>
+                <li><span class="information-list__list-item">Employer/address:</span> Enterpreneur Usmanova D.K., <span class="list-item--binded-words">49 Ismailova</span> street, Saryagash, Kazakhstan</li>
+                <li><span class="information-list__list-item">Type of business:</span> Retail</li>
             </ul>
             <!--The second part of Work Experience ends-->
         </article>
@@ -77,58 +75,58 @@
 
         <!--Web projects article starts: contains one header and four div boxes. 
         Each of it includes a picture and a name linked to the website of the project-->
-        <article class="web-projects">
-            <h2 class="section-headers">Web Projects</h2>
-            <div class="projects-container">
-                <div class="project-box">
-                    <div class="project-pic-container">
-                        <img src="./assets/warcrarft.jpg">
+        <article class="article web-projects">
+            <h2 class="article__header">Web Projects</h2>
+            <div class="article__projects-container">
+                <div class="projects-container__one-project-container">
+                    <div>
+                        <img class="one-project-container__project-picture" src="./assets/warcrarft.jpg">
                     </div>
-                    <a href="https://codepen.io/camelCaseCoder/full/Poqjrjg" target="_blank"><h3 class="project-heading">Warcraft III</h3></a>
+                    <a href="https://codepen.io/camelCaseCoder/full/Poqjrjg" target="_blank"><h3 class="one-project-container__project-header">Warcraft III</h3></a>
                 </div>
-                <div class="project-box">
-                    <div class="project-pic-container">
-                        <img src="./assets/tesla.png">
+                <div class="projects-container__one-project-container">
+                    <div>
+                        <img class="one-project-container__project-picture" src="./assets/tesla.png">
                     </div>
-                    <a href="https://codepen.io/camelCaseCoder/full/eYJJqOp" target="_blank"><h3 class="project-heading">Tesla Company</h3></a>
+                    <a href="https://codepen.io/camelCaseCoder/full/eYJJqOp" target="_blank"><h3 class="one-project-container__project-header">Tesla Company</h3></a>
                 </div>
-               <div class="project-box">
-                    <div class="project-pic-container">
-                        <img src="./assets/job_center.png">
+               <div class="projects-container__one-project-container">
+                    <div>
+                        <img class="one-project-container__project-picture" src="./assets/job_center.png">
                     </div>
-                    <a href="https://codepen.io/code_tester/full/dyMXrqJ" target="_blank"><h3 class="project-heading">Job Center</h3></a>
+                    <a href="https://codepen.io/code_tester/full/dyMXrqJ" target="_blank"><h3 class="one-project-container__project-header">Job Center</h3></a>
                 </div>
-                <div class="project-box">
-                    <div class="project-pic-container">
-                        <img src="./assets/camp_map.jpg">
+                <div class="projects-container__one-project-container">
+                    <div>
+                        <img class="one-project-container__project-picture" src="./assets/camp_map.jpg">
                     </div>
-                    <a href="https://codepen.io/code_tester/full/wvGRxQR" target="_blank"><h3 class="project-heading">Camp Map</h3></a>
+                    <a href="https://codepen.io/code_tester/full/wvGRxQR" target="_blank"><h3 class="one-project-container__project-header">Camp Map</h3></a>
                 </div>
             </div>
         </article>
         <!--Web projects article ends-->
 
         <!--Education article starts-->
-        <article class="education">
-            <h2 class="section-headers">Education and Training</h2>
-            <ul class="article-list">
-                <li><span class="value-details">Dates:</span> 2007 - 2011</li>
-                <li><span class="value-details">Qualification awarded:</span> Bachelor's degree with honours</li>
-                <li><span class="value-details">Principal studies:</span> Accounting</li>
-                <li><span class="value-details">Institution:</span> Khoja Akhmet Yassawi International Kazakh-Turkish University</li>
+        <article class="article education">
+            <h2 class="article__header">Education and Training</h2>
+            <ul class="article__information-list">
+                <li><span class="information-list__list-item">Dates:</span> 2007 - 2011</li>
+                <li><span class="information-list__list-item">Qualification awarded:</span> Bachelor's degree with honours</li>
+                <li><span class="information-list__list-item">Principal studies:</span> Accounting</li>
+                <li><span class="information-list__list-item">Institution:</span> Khoja Akhmet Yassawi International Kazakh-Turkish University</li>
             </ul>
         </article>
         <!--Education article ends-->
 
         <!--Skills article starts-->
-        <article class="skills">
-            <h2 class="section-headers">Skills and Competences</h2>
-            <ul class="article-list">
-                <li><span class="value-details">Languages spoken (fluent):</span> English, Russian, Kazakh, Uzbek</li>
-                <li><span class="value-details">Other languages:</span> Arabic (B1), Kyrgyz, Turkish (A2)</li>
-                <li><span class="value-details">Computer skills and competences:</span> <span class="keep-together">1C: accounting,</span> Microsoft Office, Micros Fidelio</li>
-                <li><span class="value-details">Additional information:</span> Graduated from a 7 year music school with honors: the piano class</li>
-                <li><span class="value-details">English proficiency:</span> Took IELTS in 2014, the result: 7.0 band score</li>
+        <article class="article skills">
+            <h2 class="article__header">Skills and Competences</h2>
+            <ul class="article__information-list">
+                <li><span class="information-list__list-item">Languages spoken (fluent):</span> English, Russian, Kazakh, Uzbek</li>
+                <li><span class="information-list__list-item">Other languages:</span> Arabic (B1), Kyrgyz, Turkish (A2)</li>
+                <li><span class="information-list__list-item">Computer skills and competences:</span> <span class="list-item--binded-words">1C: accounting,</span> Microsoft Office, Micros Fidelio</li>
+                <li><span class="information-list__list-item">Additional information:</span> Graduated from a 7 year music school with honors: the piano class</li>
+                <li><span class="information-list__list-item">English proficiency:</span> Took IELTS in 2014, the result: 7.0 band score</li>
             </ul>
         </article>
         <!--Skills article ends-->

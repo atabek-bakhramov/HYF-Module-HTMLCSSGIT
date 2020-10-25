@@ -16,10 +16,6 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 
-img {
-    max-width: 100%;
-}
-
 /* General rules for the web-page end */ 
 
 /* The layout of the web-page start */
@@ -39,7 +35,9 @@ img {
 
 .header {
     grid-area: header;
-    min-height: 21.5rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .personal-info {
@@ -70,69 +68,60 @@ footer {
 
 /* Header's elements start */
 
-.main-pic-container {
-    float: right;
-    width: 12.5rem;
-    position: relative;
-    top: 2.5rem;
-    right: 5rem;
-}
-
-.main-pic-container img {
-    box-shadow: 10px 5px 5px rgb(38, 38, 222);
-}
-
 .header__title {
+    align-self: center;
     font-size: 2.5rem;
-    position: relative;
-    top: 7rem;
-    text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.3rem;
     word-spacing: 0.3rem;
     color: rgb(55, 47, 48);
-    /* -webkit-text-stroke: 0.1rem rgb(194, 233, 51); */
+}
+
+.header__photo {
+    margin: 2rem 0;
+    width: 12rem;
+    box-shadow: 10px 5px 5px rgb(38, 38, 222);
 }
 
 /* Header's elements end */
 
 /* Article's rules start */
 
-article {
+.article {
     margin: 1rem;
     padding: 1.5rem;
     border-bottom: 0.2rem solid var(--border);
 }
 
-article .section-headers {
+.article__header {
     padding: 0.5rem;
     background-image: var(--bg-color);
     letter-spacing: 0.1rem;
     text-transform: uppercase;
 }
 
-ul.article-list {
+.article__information-list {
     list-style: none;
     list-style-position: inside;
     padding: 1rem;
     font-size: 1.5rem;
 }
 
-span.value-details {
+.information-list__list-item {
     font-weight: bold;
     font-family: 'Lucida Sans', Arial, sans-serif;
 }
 
-li.resposibilities {
+.list-item__sub-list-item {
     list-style: none;
-    padding-left: 1.5rem;
+    padding: 0 0 0 1.5rem;
 }
 
-li.resposibilities::before { 
+.list-item__sub-list-item::before { 
     content: "➣ "; 
 }
 
-span.keep-together {
+.list-item--binded-words {
     white-space: nowrap;
 }
 
@@ -140,31 +129,35 @@ span.keep-together {
 
 /* Rules for the Web projects section start */
 
-.projects-container {
+.article__projects-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 0.5rem;
+    margin: 0.5rem 0 0 0;
 }
 
-.project-box {
+.projects-container__one-project-container {
     margin: 0.5rem;
     width: 12.5rem;
     background-color: rgb(191, 226, 245);
     border-bottom: 2px solid var(--border);
 }
 
-.project-pic-container {
+.projects-container__one-project-container div { /* The only place where I used more specific css selector. I didn't think that this div deserved a class name */
     height: 10rem;
     overflow: hidden;
 }
 
-h3.project-heading {
+.one-project-container__project-picture {
+    max-width: 100%;
+}
+
+.one-project-container__project-header {
     padding: 1rem;
     text-align: center;
 }
 
-.project-box a:hover {
+.projects-container__one-project-container a:hover {
     color: red;
 }
 
@@ -173,7 +166,7 @@ h3.project-heading {
 /* Selectors for the Footer start */
 
 footer {
-    margin-top: 2rem;
+    margin: 2rem 0 0 0;
     background-image: var(--bg-color);
 
 }
@@ -189,6 +182,7 @@ footer p {
 /* All Media Queries */
 
 @media only screen and (max-width: 1420px) {
+
     html {
         font-size: 14px;
     }
@@ -203,7 +197,7 @@ footer p {
             "footer footer";
     }
 
-    .projects-container {
+    .article__projects-container {
         flex-direction: row;
         align-items: initial;
         justify-content: space-around;
@@ -211,6 +205,7 @@ footer p {
 }
 
 @media only screen and (max-width: 990px) {
+    
     html {
         font-size: 10px;
     }
@@ -227,43 +222,23 @@ footer p {
             "footer";
     }
 
-    .projects-container {
+    .article__projects-container {
         flex-wrap: wrap;
     }
 }
 
 @media only screen and (max-width: 600px) {
-    header {
-        min-height: 13rem;
-    }
 
-    .main-pic-container {
-        width: 10rem;
-        top: 1.5rem;
-        right: 2.5rem;
-        margin-left: 1.5rem;
-    }
-
-    header h1 {
+    .header__title {
+        margin: 0 1rem;
         font-size: 2rem;
-        top: 4.5rem;
         letter-spacing: initial;
         word-spacing: initial;
     }
-}
 
-@media only screen and (max-width: 420px) {
-    .main-pic-container {
-        top: 1rem;
-        right: 1rem;
-    }
-
-    header h1 {
-        margin: 0.8rem;
-        font-size: 1.5rem;
-    }
-
-    .main-pic-container img {
+    .header__photo {
+        width: 10rem;
+        margin: 1rem 1rem 1rem 0;
         box-shadow: initial;
     }
 }
