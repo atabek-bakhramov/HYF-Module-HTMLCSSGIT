@@ -154,29 +154,17 @@ img {
 
 @media only screen and (min-width: 600px) and (max-width: 1023px) {
 
-    /* Float section starts */
-
-    #grid-floats li:nth-child(n):nth-child(-n+2) {
+    #grid-floats li:nth-child(n):nth-child(-n+2), #grid-flex li:nth-child(n):nth-child(-n+2) {
         width: calc(50% - 4rem);
+    }
+
+    #grid-floats li:nth-child(n+3):nth-child(-n+14), #grid-flex li:nth-child(n+3):nth-child(-n+14) {
+        width: calc(33.3% - 4rem);
+    }
+
+    #grid-floats li, #grid-flex li {
         margin: 2rem;
     }
-
-    #grid-floats li:nth-child(n+3):nth-child(-n+14) {
-        margin: 2rem;
-    }
-    
-    #grid-floats li:nth-child(3n+3) {
-        clear: both;
-        width: calc(33.3% - 4rem); /* So nice to have the calc key to do all the hard work :) */
-    }
-
-    #grid-floats li:nth-child(3n+4), #grid-floats li:nth-child(3n+5) {
-        width: calc(33.3% - 4rem); /* Minus 2 needed to give some amount for margin. Give me some hint if there is a better way, I love finding out better ways! */
-    }
-
-    /* Float section ends */
-
-    /* Flex-box section starts */
 
     main section:nth-child(2) {
         clear: both; /* It prevents the h2 ("Grid with flexbox") from going/jumping above - into the "Grid with floats" section in the layout */
@@ -188,17 +176,7 @@ img {
         flex-wrap: wrap;
     }
 
-    #grid-flex li:nth-child(n):nth-child(-n+2) {
-        flex-basis: 50%;
-    }
-
-    #grid-flex li:nth-child(n+3):nth-child(-n+14) {
-        flex-basis: 33.3%;
-    }
-
-    /* Flex-box section ends */
-
-    /* Common rules for both section start */
+    /* Styling rules for both section start */
 
     img {
         display: block; /* to convert from inline into block, so I can center pictures in the grid item by margin: 0 auto; */
@@ -220,7 +198,7 @@ img {
         overflow: auto;
     }
 
-    /* Common rules for both section end */
+    /* Styling rules for both section end */
 }
 
 /* Tablets view ends */
@@ -229,24 +207,18 @@ img {
 
 @media only screen and (min-width: 1024px) {
     
-    /* Float section starts */ 
-
     #grid-floats li {
         height: 60rem;
         margin: 2rem;
     }
 
-    #grid-floats li:first-child, #grid-floats li:last-child {
+    #grid-floats li:first-child, #grid-floats li:last-child, #grid-flex li:first-child, #grid-flex li:last-child {
         width: calc(50% - 4rem);
     }
 
-    #grid-floats li:nth-child(n+2):nth-child(-n+13) {
+    #grid-floats li:nth-child(n+2):nth-child(-n+13), #grid-flex li:nth-child(n+2):nth-child(-n+13) {
         width: calc(25% - 4rem); 
     }
-
-    /* Float section ends */ 
-
-    /* Flex-box section starts */
 
     main section:nth-child(2) {
         clear: both; /* It prevents the h2 ("Grid with flexbox") from going/jumping above - into the "Grid with floats" section in the layout */
@@ -257,18 +229,6 @@ img {
         flex-direction: row;
         flex-wrap: wrap;
     }
-
-    #grid-flex li:first-child, #grid-flex li:last-child {
-        flex-basis: calc(50% - 4rem);
-    }
-
-    #grid-flex li:nth-child(n+2):nth-child(-n+13) {
-        flex-basis: calc(25% - 4rem);
-    }
-
-    /* Flex-box section ends */
-
-    /* Common rules for both sections start */
 
     h3 {
         font-size: 2rem;
@@ -285,8 +245,6 @@ img {
         height: 27rem;
         overflow: auto;
     }
-
-    /* Common rules for both section end */
-
+    
 }
 
