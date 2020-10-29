@@ -89,7 +89,7 @@ h3 {
 
 p {
     font-size: 1.6rem;
-    padding: 2rem;
+    padding: 1rem;
     color: var(--white);
     height: 15rem;
     border-radius: 0 0 1rem 1rem;
@@ -236,13 +236,13 @@ img {
     }
 
     li:first-child img, li:last-child img  {
-        display: block;
+        display: block; 
         width: 70%; /* To be able to contain the picture and text inside of the <li> container, when the size of the viewer's screen is really big, like 1600px wide */
         margin: 0 auto;
     } 
 
     li:not(:first-child):not(:last-child) p {
-        height: 26rem;
+        height: 27rem;
         overflow: auto;
     }
     
