@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital@0;1&family=Fira+Sans:ital@0;1&family=Roboto:ital@0;1&family=Ubuntu:ital@0;1&display=swap');
+
+/* General Rules section starts */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Whenever I put box-sizing to html, it doesn't work there. And here it works perfectly. Dunno why (?) */
+}
+
+:root {
+    --color-blue: rgb(100, 0, 228);
+    --color-gray: rgb(130, 130, 133);
+    --color-white: rgb(255, 255, 255);
+}
+
+body {
+    font-family: 'Fira Sans', 'Ubuntu', 'Roboto',  'Cantarell', sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;   
+}
+
+/* General Rules section ends */
+
+
+/* Navigation Rules section starts */
+
+.nav {
+    height: 5rem;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-white);
+}
+
+.container { /* This class's properties are shared among nav, header, main sections */
+    max-width: 102rem;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 6rem;
+    height: 100%;
+}
+
+.nav__two-sides-holder {
+    height: 100%;
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Left Side of Navigation section starts */
+
+.codecademy-logo-wrapper {
+    margin: 0 0.5rem;
+}
+
+.anchor-codecademy-logo {
+    padding: 1rem 1rem 0.25rem 1rem;
+}
+
+.codecademy-logo-image {
+    width: 8rem;
+}
+
+.catalog-pricing-business-buttons-container {
+    display: flex;
+}
+
+.nav__button-holder {
+    padding: 1rem 0;
+    margin: 0 0.5rem;
+}
+
+.nav__button {
+    color: rgb(20, 28, 58);
+    padding: 0.1rem;
+}
+
+/* Left Side of Navigation section ends */
+
+/* Right Side of Navigation section starts */
+
+.nav__log-in {
+    justify-content: flex-end;
+    /* align-items: center; */
+}
+
+.log-in-sign-up-anchors-wrapper {
+    margin: 0 0.5rem;
+}
+
+.anchor-log-in {
+    color: rgb(20, 28, 58);
+    padding: 0.375rem 1rem;
+}
+
+.anchor-sign-up {
+    color: var(--color-white);
+    background-color: var(--color-blue);
+    display: block;
+    padding: 0.375rem 1rem;
+    border-radius: 2px;
+}
+
+/* Right Side of Navigation section ends */
+
+/* Navigation Rules section ends */
+
+
+/* Header Rules section starts */
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Left Part of the Header section starts */
+
+.header__left-side-images-container {
+    min-height: 45rem;
+    /* display: block; */
+    position: relative;
+    flex-basis: 50%;
+    margin: 2rem 12% 0 0;
+    /* margin-right: 12%;
+    margin-top: 2rem; */
+}
+
+.left-side-images-container__main-text-container {
+    background-color: var(--color-blue);
+    padding: 2rem;
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.left-side-images-container__main-text__main-header {
+    font-size: 3rem;
+    color: var(--color-white);
+    /* margin-top: 0;
+    margin-bottom: 0; */
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+.header__main-image {
+    width: auto;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    top: 8%;
+    max-width: 36rem;
+    /* vertical-align: middle; */
+    /* border-style: none; */
+}
+
+.header__horizontal-strips-image {
+    left: 22%;
+    position: absolute;
+    top: 15%;
+    max-width: 33.3%;
+    z-index: 2;
+    /* vertical-align: middle; */
+    /* border-style: none; */
+}
+
+.header__three-dots-image {
+    /* vertical-align: middle;
+    border-style: none; */
+}
+
+.header__triangle-image {
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    left: 0;
+    z-index: 1;
+    /* vertical-align: middle;
+    border-style: none; */
+}
+
+.header__square {
+    position: absolute;
+    left: 50%;
+    z-index: 0;
+    max-width: 50%;
+    /* vertical-align: middle;
+    border-style: none; */
+}
+
+/* Left Part of the Header section ends */
+
+/* Right Part of the Header section starts */
+
+.header__right-side-form-container {
+    padding: 4rem 2rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.header__right-side-form-container__subcontainer {
+    max-width: 22rem;
+}
+
+.header__right-side-form-container__subcontainer__form-header {
+    font-size: 1.4rem;
+    margin: 0 0 1rem 0;
+    flex-grow: 1;
+    line-height: 1.1;
+}
+
+.header__right-side-form-container__subcontainer__form-container {
+
+}
+
+.form-container__subcontainer {
+    margin-bottom: 1rem;
+    position: relative;
+    width: 100%;
+}
+
+.label-sign-up {
+    color: rgb(20, 28, 58);
+    display: inline-block;
+    margin: 0 0.4rem 0 0;
+    line-height: 1.25rem;
+    font-size: 0.9rem;
+    /* font-weight: bold; */
+}
+
+.input-sign-up {
+    margin-top: 0.4rem;
+    font-size: 1rem;
+    text-indent: 0.8rem;
+    padding: .8rem 0;
+    width: 100%;
+    border: 1px solid rgb(221, 220, 224);
+    border-radius: 2px;
+    display: block;
+    cursor: text;
+}
+
+/* Code-Now Button Rules starts */
+.header__right-side-form-container__subcontainer__start-coding-now-container {
+
+}
+
+.button-start-coding-now {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.33;
+    min-width: 10rem;
+    color: var(--color-white);
+    background-color: var(--color-blue);
+    border-radius: 2px;
+    border: 1px solid transparent;
+}
+
+.text-privacy-policy {
+    color: rgb(20, 28, 58);
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+/* Code-Now Button Rules ends */
+
+/* Sign Up Using Social Media starts */
+.sign-up-using-social-media-header {
+    line-height: 1.1;
+    color: rgb(20, 28, 58);
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0 0 1rem 0;
+}
+
+.social-media-icons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.social-media-icons-container__common-properties {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1;
+    margin: 0 0.5rem;
+}
+
+.social-media-icons-images-properties {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0.5rem 0;
+    width: 100%;
+    padding: 0.5rem 0;
+    border: 2px solid rgb(246, 245, 250);
+}
+
+.social-media-icons-images-properties img {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.anchor-terms-and-policy:link {
+    text-decoration: underline;
+    color: var(--color-blue);
+}
+/* Sign Up Using Social Media ends */
+
+/* Right Part of the Header section ends */
+
+
+/* Bottom Part of the Header section starts */
+
+.header__bottom-image-container {
+    height: 14rem;
+    margin-top: -7.5rem;
+    width: 100%;
+    /* vertical-align: middle; */
+}
+
+/* Bottom Part of the Header section ends */
+
+
+
