@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Cantarell:ital@0;1&family=Fira+Sans:ital@0;1&family=Roboto:ital@0;1&family=Ubuntu:ital@0;1&display=swap');
 
+@font-face {
+    font-family: 'Apercu';
+    src: url('./fonts/Apercu\ Pro\ Regular.otf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Apercu';
+    src: url('./fonts/Apercu\ Pro\ Medium\ Italic.otf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Apercu';
+    src: url('./fonts/Apercu\ Pro\ Medium.otf');
+    font-weight: bold;
+}
+
 /* General Rules section starts */
 
 * {
@@ -11,11 +29,12 @@
 :root {
     --color-blue: rgb(100, 0, 228);
     --color-gray: rgb(130, 130, 133);
+    --color-bg-light-gray: rgb(241, 243, 254);
     --color-white: rgb(255, 255, 255);
 }
 
 body {
-    font-family: 'Fira Sans', 'Ubuntu', 'Roboto',  'Cantarell', sans-serif;
+    font-family: 'Apercu', 'Fira Sans', 'Ubuntu', 'Roboto', 'Cantarell', sans-serif;
     line-height: 1.5;
 }
 
@@ -51,6 +70,7 @@ a {
     flex: 1 1;
     display: flex;
     align-items: center;
+    border: 4px red solid;
 }
 
 /* Left Side of Navigation section starts */
@@ -114,8 +134,10 @@ a {
 /* Header Rules section starts */
 
 .header {
+    position: relative;
     display: flex;
     flex-direction: column;
+    /* height: 45rem; */
 }
 
 /* Left Part of the Header section starts */
@@ -307,14 +329,72 @@ a {
 
 /* Bottom Part of the Header section starts */
 
-.header__bottom-image-container {
-    height: 14rem;
-    margin-top: -7.5rem;
+.header__bottom-image-container{
+    position: absolute;
+    bottom: 0;
+    height: 13.5rem;
     width: 100%;
-    /* vertical-align: middle; */
+    overflow: hidden;
+    /* border: 5px solid black; */
+    /* background-color: red; */
+}
+
+.header__bottom-image {
+    width: 100%;
 }
 
 /* Bottom Part of the Header section ends */
+
+
+/* Main Section starts */
+
+.main {
+    background-color: var(--color-bg-light-gray);
+}
+
+/* Take-quiz section starts */
+.main__take-quiz {
+    margin: 6rem 0 0 0;
+    display: flex;   
+    height: 26rem;
+    width: 80rem;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.main__take-quiz__text-holder {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-blue);
+    height: 100%;
+    width: 28rem;
+    padding: 4rem;
+}
+
+.main__take-quiz_image-holder {
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.main__take-quiz_image-holder__take-quiz-image {
+    height: 100%;
+}
+
+.main__take-quiz__vertical-square-holder {
+    width: 2rem;
+    height: 90%;
+    align-self: flex-end;  
+}
+
+.main__take-quiz__vertical-square-picture {
+    background-image: url("./assets/main-take-quiz-blue-dots.png"); /* Couldn't download the picture from the original website 🤷🏽‍♂️*/
+    background-repeat: repeat;
+    background-size: cover;
+    background-size: 2rem;
+    height: 100%;
+}
+
 
 
 
