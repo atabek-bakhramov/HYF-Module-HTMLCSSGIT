@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital@0;1&family=Fira+Sans:ital@0;1&family=Roboto:ital@0;1&family=Ubuntu:ital@0;1&display=swap');
-
+/* The main font doesn't exist in the google fonts data */
 @font-face {
     font-family: 'Apercu';
     src: url('./fonts/Apercu\ Pro\ Regular.otf');
@@ -14,9 +13,12 @@
 
 @font-face {
     font-family: 'Apercu';
-    src: url('./fonts/Apercu\ Pro\ Medium.otf');
+    src: url('./fonts/Apercu\ Pro\ Bold.otf');
     font-weight: bold;
 }
+
+/* Back-up fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital@0;1&family=Fira+Sans:ital@0;1&family=Roboto:ital@0;1&family=Ubuntu:ital@0;1&display=swap');
 
 /* General Rules section starts */
 
@@ -31,19 +33,24 @@
     --color-gray: rgb(130, 130, 133);
     --color-bg-light-gray: rgb(241, 243, 254);
     --color-white: rgb(255, 255, 255);
+    --color-yellow: rgb(255, 255, 0);
 }
 
 body {
     font-family: 'Apercu', 'Fira Sans', 'Ubuntu', 'Roboto', 'Cantarell', sans-serif;
-    line-height: 1.5;
+    /* line-height: 1.1; */
 }
 
 a {
-    text-decoration: none;   
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+    list-style-position: inside;
 }
 
 /* General Rules section ends */
-
 
 /* Navigation Rules section starts */
 
@@ -70,7 +77,7 @@ a {
     flex: 1 1;
     display: flex;
     align-items: center;
-    border: 4px red solid;
+    /* border: 4px red solid; */
 }
 
 /* Left Side of Navigation section starts */
@@ -163,7 +170,6 @@ a {
     font-size: 3rem;
     color: var(--color-white);
     line-height: 1.1;
-    font-weight: bold;
 }
 
 .header__main-image {
@@ -239,7 +245,7 @@ a {
     margin: 0 0.4rem 0 0;
     line-height: 1.25rem;
     font-size: 0.9rem;
-    /* font-weight: bold; */
+    font-weight: bold;
 }
 
 .input-sign-up {
@@ -284,7 +290,6 @@ a {
 .sign-up-using-social-media-header {
     line-height: 1.1;
     color: rgb(20, 28, 58);
-    font-weight: 700;
     font-size: 1rem;
     margin: 0 0 1rem 0;
 }
@@ -320,6 +325,7 @@ a {
 
 .anchor-terms-and-policy:link {
     text-decoration: underline;
+    font-weight: bold;
     color: var(--color-blue);
 }
 /* Sign Up Using Social Media ends */
@@ -354,27 +360,60 @@ a {
 
 /* Take-quiz section starts */
 .main__take-quiz {
-    margin: 6rem 0 0 0;
+    margin: 5rem 0 0 0;
     display: flex;   
     height: 26rem;
-    width: 80rem;
+    width: 88rem;
     flex-direction: row;
-    overflow: hidden;
+    /* Why if I don't write here hidden, then it doesn't hide the picture of the class main__take-quiz_image-holder? */
+    overflow: hidden; 
 }
 
 .main__take-quiz__text-holder {
+    flex: 1 0;
     display: flex;
     flex-direction: column;
     background-color: var(--color-blue);
     height: 100%;
     width: 28rem;
-    padding: 4rem;
+    padding: 4rem 0 4rem 4rem;
 }
 
+.main__take-quiz__text-holder__header {
+    margin: 0 0 1rem 0;
+    color: var(--color-white);
+    line-height: 1.1;
+    font-size: 2.5rem;
+
+}
+
+.span-yellow-color-word {
+    color: var(--color-yellow);
+}
+
+.main__take-quiz__text-holder__description {
+    margin: 0 0 1rem 0;
+    font-size: 1.125rem; 
+    /* line-height: 1; */
+    color: var(--color-white);
+}
+
+.main__take-quiz__text-holder__button {
+    padding: 0.75rem 1.25rem;
+    border-radius: 3.125rem;
+    line-height: 1.25rem;
+    width: 10rem;
+    background-color: var(--color-yellow);
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+
+
 .main__take-quiz_image-holder {
+    flex: 2 0;
     height: 100%;
     overflow: hidden;
-
 }
 
 .main__take-quiz_image-holder__take-quiz-image {
@@ -382,9 +421,10 @@ a {
 }
 
 .main__take-quiz__vertical-square-holder {
-    width: 2rem;
+    /* flex-shrink: 0; */
     height: 90%;
     align-self: flex-end;  
+    width: 2rem;
 }
 
 .main__take-quiz__vertical-square-picture {
@@ -394,7 +434,53 @@ a {
     background-size: 2rem;
     height: 100%;
 }
+/* Take quiz section ends */
+
+/* Footer starts */
+
+.footer__flex-wrapper {
+    display: flex;
+    width: 100%;
+    padding: 1.5rem 0;
+    line-height: 1.75rem;
+    font-size: 0.95rem;
+}
+
+.footer__flex-wrapper div {
+    flex: 1;
+}
+
+.footer__flex-wrapper div:nth-child(n+3):nth-child(-n+4) {
+    align-self: flex-end;
+}
+
+.footer__headers {
+    margin: 0 0 0.8125rem 0;
+    font-weight: normal;
+}
+
+.footer__flex-wrapper a {
+    color: black;
+}
+
+.extra-properties-for-container {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0.75rem 6rem;
+    font-size: 0.875rem;
+}
+
+.footer__agreements__span {
+    font-weight: 500;
+}
+
+.heart-span::before {
+    content: '\2665';
+    color: red;
+    -webkit-text-stroke: 0.025rem black; 
+}
 
 
 
+/* Footer ends */
 
