@@ -345,7 +345,7 @@ li {
 
 /* Take-quiz section starts */
 .main__take-quiz {
-    margin: 5rem 0 0 0;
+    margin: 5rem 0 10rem 0;
     display: flex;   
     height: 26rem;
     width: 88rem;
@@ -394,7 +394,6 @@ li {
     font-weight: bold;
 }
 
-
 .main__take-quiz_image-holder {
     flex: 2 0;
     height: 100%;
@@ -415,11 +414,114 @@ li {
 .main__take-quiz__vertical-square-picture {
     background-image: url("./assets/main-take-quiz-blue-dots.png"); /* Couldn't download the picture from the original website 🤷🏽‍♂️*/
     background-repeat: repeat;
-    background-size: cover;
     background-size: 2rem;
     height: 100%;
 }
 /* Take quiz section ends */
+
+/* What-to-learn section starts */
+
+.container-what-to-learn {
+    position: relative;
+    background-image: url("./assets/section-what-to-learn-background.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-color: rgb(22, 29, 56);
+    color: var(--color-white);
+}
+
+.what-to-learn__three-dots-image {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+}
+
+.what-to-learn__vertical-stripes {
+    position: absolute;
+    right: 2rem;
+    max-width: 6rem;
+    top: -4rem;
+}
+
+.what-to-learn__header {
+    padding: 8rem 0;
+    font-size: 3.84rem;
+    text-align: center;
+    
+}
+
+.span-green-color-word {
+    color: rgb(141, 232, 194);
+}
+
+.what-to-learn__fields-of-science-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0 0 5rem 0;
+    align-items: flex-end;
+
+}
+
+.fields-of-science-container__one-field-section {
+    flex-grow: 1;
+}
+
+.margin-for-second-and-third-sections {
+    margin: 0 0 0 4.5rem;
+}
+
+.one-field-section__common-header-rules {
+    border-bottom: 0.125rem solid var(--color-white);
+    text-align: center;
+    padding-bottom: 1rem;
+    font-size: 2.125rem;
+    font-weight: bold;
+    margin: 0 0 1rem 0;
+}
+
+.one-field-section__common-unordered-list-rules {
+    margin: 0 0 1rem 0;
+}
+
+.common-unordered-list-rules__common-list-items-rules {
+    display: inline-block;
+    margin: 0 1.5rem 0 0;
+    font-weight: bold;
+    font-size: .95rem;
+    text-transform: uppercase;
+}
+
+.common-unordered-list-rules__common-list-items-rules::before {
+    content: "•";
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+}
+
+.what-to-learn__fields-of-science-container div:first-child li::before {
+    color: #ffd500;
+}
+
+.what-to-learn__fields-of-science-container div:nth-child(2) li::before {
+    color: var(--color-white);
+}
+
+.what-to-learn__fields-of-science-container div:nth-child(3) li::before {
+    color: var(--color-blue);
+}
+
+/* .common-unordered-list-rules__common-list-items-rules::before {
+
+} */
+
+.one-field-section__common-description-rules {
+    font-size: 1.125rem;
+    margin: 0 0 1rem 0;
+}
+
+
+/* What-to-learn section ends */
 
 /* Footer starts */
 
@@ -476,8 +578,6 @@ li {
     color: red;
     -webkit-text-stroke: 0.025rem black; 
 }
-
-
 
 /* Footer ends */
 
